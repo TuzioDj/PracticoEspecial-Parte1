@@ -22,7 +22,7 @@ switch ($params[0]) {
             $mainController->showMain();
         break;
     case 'item':
-            if(isset($params[1])){
+            if(!empty($params[1])){
                 $mainController->showProduct($params[1]);
             }
             else{
@@ -30,8 +30,12 @@ switch ($params[0]) {
             }
         break;
     case 'sortby':
-            $id = $params[1];
-            $mainController->sortBy($id);
+            if(!empty($params[1])){
+                $mainController->sortBy($params[1]);
+            }
+            else{
+                $mainController->showMain();
+            }
         break;
     default:
         echo('404 Page not found');

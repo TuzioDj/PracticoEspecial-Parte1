@@ -8,10 +8,11 @@ class MainView {
         $this->smarty = new Smarty();
     }
 
-    function showCategories($categories){
+    function showCategories($categories, $loginStatus){
 
         $this->smarty->assign('count', count($categories)); 
         $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('loginStatus', $loginStatus);
 
     }
 
@@ -19,7 +20,6 @@ class MainView {
 
         $this->smarty->assign('count', count($products)); 
         $this->smarty->assign('products', $products);
-        $this->smarty->assign('adminStatus', $adminStatus);
 
 
         $this->smarty->display('showProducts.tpl');
@@ -29,7 +29,6 @@ class MainView {
     function showProduct($product){
 
         $this->smarty->assign('product', $product);
-        $this->smarty->assign('adminStatus', $adminStatus);
 
         
         $this->smarty->display('product.tpl');

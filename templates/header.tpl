@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <!-- Importo Bootstrap (CSS) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -42,6 +42,7 @@
                 Categorias
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="sortby">Todo</a></li>
                 {foreach from=$categories item=$category}
                   
                   <li><a class="dropdown-item" href="sortby/{$category->idTipo}">{$category->tipoDeProducto}</a></li>
@@ -52,7 +53,7 @@
 
           </ul>
 
-          <a class="nav-link nav-item navbar-nav mb-2 mb-lg-0" href="admin">Login</a>
+          <a class="nav-link nav-item navbar-nav mb-2 mb-lg-0" href="login">Login</a>
 
         </div>
       </div>

@@ -14,6 +14,10 @@
                     <p class="card-text">${$product->precio}</p>
                 </div>
                 <a href="item/{$product->idProducto}" class="btn bg-dark btn-outline-light">Ver detalles</a>
+                {if $loginStatus == true}
+                    <a href="admin/edit/{$product->idProducto}" class="btn bg-secondary btn-outline-light">Editar</a>
+                    <a href="admin/delete/{$product->idProducto}" class="btn bg-danger btn-outline-light">Eliminar</a>
+                {/if}
             </div>
         </div>
 
