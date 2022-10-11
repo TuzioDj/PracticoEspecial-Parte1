@@ -585,7 +585,7 @@ class Smarty_Security
     }
 
     /**
-     * Remove old directories and its sub folders, add new directories
+     * Remove old directories and its sub folders, addProduct new directories
      *
      * @param array $oldDir
      * @param array $newDir
@@ -631,7 +631,7 @@ class Smarty_Security
                     // give up
                     break;
                 }
-                // remember the directory to add it to _resource_dir in case we're successful
+                // remember the directory to addProduct it to _resource_dir in case we're successful
                 $_directory[ $directory ] = true;
                 // bubble up one level
                 $directory = preg_replace('#[\\\\/][^\\\\/]+[\\\\/]$#', DIRECTORY_SEPARATOR, $directory);

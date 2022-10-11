@@ -34,26 +34,34 @@
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="inicio">Inicio</a>
+              <a class="nav-link" aria-current="page" href="inicio">Inicio</a>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Categorias
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="sortby">Todo</a></li>
+                <li><a class="dropdown-item" href="sortby">Todo</a></li>
                 {foreach from=$categories item=$category}
-                  
+
                   <li><a class="dropdown-item" href="sortby/{$category->idTipo}">{$category->tipoDeProducto}</a></li>
 
                 {/foreach}
               </ul>
             </li>
-
+            {if isset($smarty.session.USER_NAME)}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="admin">Admin</a>
+              </li>
+            {/if}
           </ul>
-
-          <a class="nav-link nav-item navbar-nav mb-2 mb-lg-0" href="login">Login</a>
+          {if !isset($smarty.session.USER_NAME)}
+            <a class="nav-link nav-item navbar-nav mb-2 mb-lg-0" href="login">Login</a>
+          {else}
+            <a class="nav-link nav-item navbar-nav mb-2 mb-lg-0" href="logout">Logout {$smarty.session.USER_NAME}</a>
+          {/if}
 
         </div>
       </div>

@@ -60,7 +60,7 @@ class Smarty_Internal_Compile_Extends extends Smarty_Internal_Compile_Shared_Inh
         if (strpos($_attr[ 'file' ], '$_tmp') !== false) {
             $compiler->trigger_template_error('illegal value for file attribute', $compiler->parser->lex->line - 1);
         }
-        // add code to initialize inheritance
+        // addProduct code to initialize inheritance
         $this->registerInit($compiler, true);
         $file = trim($_attr[ 'file' ], '\'"');
         if (strlen($file) > 8 && substr($file, 0, 8) === 'extends:') {

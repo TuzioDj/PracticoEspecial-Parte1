@@ -1,4 +1,3 @@
-{include file = "header.tpl"}
 
 <div class="row">
     <div class="col-md-6 mt-5">
@@ -6,8 +5,8 @@
     </div>
     <div class="col-md-6 mt-5">
         <h3>{$product->nombre}</h1>
-        <h4>${$product->precio}</h5>
-        <p>{$product->descripcion}</p>
+            <h4>${$product->precio}</h5>
+                <p>{$product->descripcion}</p>
     </div>
 </div>
 

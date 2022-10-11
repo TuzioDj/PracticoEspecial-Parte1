@@ -9,7 +9,7 @@
  * Smarty spacify modifier plugin
  * Type:     modifier
  * Name:     spacify
- * Purpose:  add spaces between characters in a string
+ * Purpose:  addProduct spaces between characters in a string
  *
  * @link   https://www.smarty.net/manual/en/language.modifier.spacify.php spacify (Smarty online manual)
  * @author Monte Ohrt <monte at ohrt dot com>

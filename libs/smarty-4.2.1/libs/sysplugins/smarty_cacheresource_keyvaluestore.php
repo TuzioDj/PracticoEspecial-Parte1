@@ -436,7 +436,7 @@ abstract class Smarty_CacheResource_KeyValueStore extends Smarty_CacheResource
         while (true) {
             // determine next delimiter position
             $i = strpos($cid, '|', $i);
-            // add complete CacheID if there are no more delimiters
+            // addProduct complete CacheID if there are no more delimiters
             if ($i === false) {
                 $t[] = 'IVK#CACHE#' . $cid;
                 $t[] = 'IVK#CID' . $_name . $cid . $_compile;
@@ -444,7 +444,7 @@ abstract class Smarty_CacheResource_KeyValueStore extends Smarty_CacheResource
                 break;
             }
             $part = substr($cid, 0, $i);
-            // add slice to list
+            // addProduct slice to list
             $t[] = 'IVK#CACHE#' . $part;
             $t[] = 'IVK#CID' . $_name . $part . $_compile;
             // skip past delimiter position

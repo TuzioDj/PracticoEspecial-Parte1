@@ -119,7 +119,7 @@ class Smarty_Internal_Runtime_TplFunction
                     while (!isset($tplPtr->cached) && isset($tplPtr->parent)) {
                         $tplPtr = $tplPtr->parent;
                     }
-                    // add template function code to cache file
+                    // addProduct template function code to cache file
                     if (isset($tplPtr->cached)) {
                         $content = $tplPtr->cached->read($tplPtr);
                         if ($content) {

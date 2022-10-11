@@ -52,7 +52,7 @@ function smarty_modifier_mb_wordwrap($str, $width = 75, $break = "\n", $cut = fa
                     $t = mb_substr($t, 0, -1, Smarty::$_CHARSET);
                 }
                 if (!$_space) {
-                    // add the break before the token
+                    // addProduct the break before the token
                     if (!empty($t)) {
                         $t .= $break;
                     }
@@ -63,7 +63,7 @@ function smarty_modifier_mb_wordwrap($str, $width = 75, $break = "\n", $cut = fa
                 $length = 0;
             }
             $_previous = $_space;
-            // add the token
+            // addProduct the token
             $t .= $token;
         }
     }

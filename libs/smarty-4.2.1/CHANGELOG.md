@@ -134,7 +134,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 13.01.2020
  - fix typo in exception message (JercSi)
  - fix typehint warning with callable (bets4breakfast)
- - add travis badge and compatability info to readme (matks)
+ - addProduct travis badge and compatability info to readme (matks)
  - fix stdClass cast when compiling foreach (carpii)
  - fix wrong set/get methods for memcached (IT-Experte)
  - fix pborm assigning value to object variables in smarty_internal_compile_assign (Hunman)
@@ -324,7 +324,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - bugfix remove special treatment of classes implementing ArrayAccess in {foreach}
     https://github.com/smarty-php/smarty/issues/332
   - bugfix remove deleted files by clear_cache() and clear_compiled_template() from
-    ACP cache if present, add some is_file() checks to avoid possible warnings on filemtime()
+    ACP cache if present, addProduct some is_file() checks to avoid possible warnings on filemtime()
     caused by above functions.
     https://github.com/smarty-php/smarty/issues/341
   - bugfix version 3.1.31 did fail under PHP 5.2
@@ -366,7 +366,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - smaller speed optimization
 
  08.11.2016
-  - add bootstrap file to load and register Smarty_Autoloader. Change composer.json to make it known to composer
+  - addProduct bootstrap file to load and register Smarty_Autoloader. Change composer.json to make it known to composer
 
  07.11.2016
   - optimization of lexer speed https://github.com/smarty-php/smarty/issues/311
@@ -444,7 +444,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - bugfix using nocache like attribute with value true like {plugin nocache=true} did not work https://github.com/smarty-php/smarty/issues/285
   - bugfix uppercase TRUE, FALSE and NULL did not work when security was enabled https://github.com/smarty-php/smarty/issues/282
   - bugfix when {foreach} was looping over an object the total property like {$item@total} did always return 1 https://github.com/smarty-php/smarty/issues/281
-  - bugfix {capture}{/capture} did add in 3.1.30 unintended additional blank lines https://github.com/smarty-php/smarty/issues/268
+  - bugfix {capture}{/capture} did addProduct in 3.1.30 unintended additional blank lines https://github.com/smarty-php/smarty/issues/268
 
  01.09.2016
   - performance require_once should be called only once for shared plugins https://github.com/smarty-php/smarty/issues/280
@@ -581,7 +581,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
  20.02.2016
   - bugfix {strip} must keep space between hmtl tags. Broken by changes of 10.2.2016 https://github.com/smarty-php/smarty/issues/184
-  - new feature/bugfix  {foreach}{section} add 'properties' attribute to force compilation of loop properties
+  - new feature/bugfix  {foreach}{section} addProduct 'properties' attribute to force compilation of loop properties
     see NEW_FEATURES.txt https://github.com/smarty-php/smarty/issues/189
 
  19.02.2016
@@ -695,7 +695,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  20.12.2015
   - bugfix failure when the default resource type was set to 'extendsall' https://github.com/smarty-php/smarty/issues/123
   - update compilation of Smarty special variables
-  - bugfix add addition check for OS type on normalization of file path https://github.com/smarty-php/smarty/issues/134
+  - bugfix addProduct addition check for OS type on normalization of file path https://github.com/smarty-php/smarty/issues/134
   - bugfix the source uid of the extendsall resource must contain $template_dir settings https://github.com/smarty-php/smarty/issues/123
 
  19.12.2015
@@ -752,7 +752,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - update config file processing
 
  31.10.2015
-  - bugfix add missing $trusted_dir property to SmartyBC class (forum topic 25751)
+  - bugfix addProduct missing $trusted_dir property to SmartyBC class (forum topic 25751)
 
  29.10.2015
   - improve template scope handling
@@ -1110,7 +1110,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
  08.11.2014 - 10.11.2014
  - bugfix subtemplate called in nocache mode could be called with wrong compile_id when it did change on one of the calling templates
- - improvement add code of template functions called in nocache mode dynamically to cache file (related to bugfix of 01.11.2014)
+ - improvement addProduct code of template functions called in nocache mode dynamically to cache file (related to bugfix of 01.11.2014)
  - bugfix Debug Console did not include all data from merged compiled subtemplates
 
  04.11.2014
@@ -1501,7 +1501,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 24.05.2012
 - bugfix Smarty_Internal_Write_File::writeFile() could cause race-conditions on linux systems (Issue 101)
 - bugfix attribute parameter names of plugins may now contain also "-"  and ":"  (Forum Topic 21856)
-- bugfix add compile_id to cache key of of source (Issue 97)
+- bugfix addProduct compile_id to cache key of of source (Issue 97)
 
 22.05.2012
 - bugfix recursive {include} within {section} did fail (Smarty developer group)
@@ -1664,7 +1664,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 21.10.2011
 - bugfix apostrophe in plugins_dir path name failed (forum topic 20199)
 - improvement sha1() for array keys longer than 150 characters
-- add Smarty::$allow_ambiguous_resources to activate unique resource handling (Forum Topic 20128)
+- addProduct Smarty::$allow_ambiguous_resources to activate unique resource handling (Forum Topic 20128)
 
 20.10.2011
 - @silenced unlink() in Smarty_Internal_Write_File since debuggers go haywire without it.
@@ -1688,17 +1688,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 14.10.2011
 - bugfix unique_resource did not properly apply to compiled resources (Forum Topic 20128)
-- add locking to custom resources (Forum Post 75252)
-- add Smarty_Internal_Template::clearCache() to accompany isCached() fetch() etc.
+- addProduct locking to custom resources (Forum Post 75252)
+- addProduct Smarty_Internal_Template::clearCache() to accompany isCached() fetch() etc.
 
 13.10.2011
-- add caching for config files in Smarty_Resource
+- addProduct caching for config files in Smarty_Resource
 - bugfix disable of caching after isCached() call did not work (Forum Topic 20131)
-- add concept unique_resource to combat potentially ambiguous template_resource values when custom resource handlers are used (Forum Topic 20128)
+- addProduct concept unique_resource to combat potentially ambiguous template_resource values when custom resource handlers are used (Forum Topic 20128)
 - bugfix multiline strings in config files could fail on longer strings (Issue #55)
 
 11.10.2011
-- add runtime checks for not matching {capture}/{/capture} calls (Forum Topic 20120)
+- addProduct runtime checks for not matching {capture}/{/capture} calls (Forum Topic 20120)
 
 10.10.2011
 - bugfix variable name typo in {html_options} and {html_checkboxes} (Issue #54)
@@ -1721,7 +1721,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 05.10.2011
 - bugfix of problem introduced with r4342 by replacing strlen() with isset()
-- add environment configuration issue with mbstring.func_overload Smarty cannot compensate for (Issue #45)
+- addProduct environment configuration issue with mbstring.func_overload Smarty cannot compensate for (Issue #45)
 - bugfix nofilter tag option did not disable default modifier
 - bugfix html_options plugin did not handle null- and object values properly (Issue #49, Forum Topic 20049)
 
@@ -1729,12 +1729,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - bugfix assign() in plugins called in subtemplates did change value also in parent template
 - bugfix of problem introduced with r4342 on math plugin
 - bugfix output filter should not run on individually cached subtemplates
-- add unloadFilter() method
+- addProduct unloadFilter() method
 - bugfix has_nocache_code flag was not reset before compilation
 
 ## Smarty-3.1.2  -
 03.10.2011
-- improvement add internal $joined_template_dir property instead computing it on the fly several times
+- improvement addProduct internal $joined_template_dir property instead computing it on the fly several times
 
 01.10.2011
 - improvement replaced most in_array() calls by more efficient isset() on array_flip()ed haystacks
@@ -2020,7 +2020,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - optimizations of template processing
 - made register... methods permanet
 - code for default_plugin_handler
-- add automatic recompilation at version change
+- addProduct automatic recompilation at version change
 
 04/02/2011
 - change in Smarty_CacheResource_Custom

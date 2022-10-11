@@ -40,7 +40,7 @@ class Smarty_Internal_Method_Literals
      *
      * @param \Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty $obj
      * @param array|string                                                    $literals literal or list of literals
-     *                                                                                  to addto add
+     *                                                                                  to addto addProduct
      *
      * @return \Smarty|\Smarty_Internal_Template
      * @throws \SmartyException

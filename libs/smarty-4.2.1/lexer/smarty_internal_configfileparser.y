@@ -188,7 +188,7 @@ class Smarty_Internal_Configfileparser
     }
 
     /**
-     * add config variable to global vars
+     * addProduct config variable to global vars
      *
      * @param array $vars
      */
@@ -203,7 +203,7 @@ class Smarty_Internal_Configfileparser
     }
 
     /**
-     * add config variable to section
+     * addProduct config variable to section
      *
      * @param string $section_name
      * @param array  $vars

@@ -131,7 +131,7 @@ function smarty_function_html_checkboxes($params, Smarty_Internal_Template $temp
                 if (!empty($params[ 'strict' ])) {
                     if (!is_scalar($_val)) {
                         trigger_error(
-                            "html_options: {$_key} attribute must be a scalar, only boolean true or string '{$_key}' will actually add the attribute",
+                            "html_options: {$_key} attribute must be a scalar, only boolean true or string '{$_key}' will actually addProduct the attribute",
                             E_USER_NOTICE
                         );
                     }
