@@ -57,6 +57,7 @@ switch ($params[0]) {
         break;
 
     case 'addProduct':
+        $categoriesController->showNavbar();
 
         $productsController->addProduct();
         break;
@@ -72,6 +73,7 @@ switch ($params[0]) {
         break;
 
     case 'editProduct':
+        $categoriesController->showNavbar();
 
         $productsController->editProduct($params[1]);
         break;

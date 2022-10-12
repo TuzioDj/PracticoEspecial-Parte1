@@ -1,5 +1,5 @@
 <h3>Editar producto:</h3>
-<form method="POST" action="editProduct/{$product->idProducto}">
+<form method="POST" action="editProduct/{$product->idProducto}" enctype="multipart/form-data">
 
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nombre</label>
@@ -20,6 +20,13 @@
         <label for="exampleInputPassword1" class="form-label">Imagen</label>
         <input name="imagen" type="file" class="form-control" value="{$product->imagen}">
     </div>
+    
+    {if $error} 
+        <div class="alert alert-danger mb-3">
+            {$error}
+        </div>
+    {/if}
+
 
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Categoria</label>

@@ -44,17 +44,21 @@ class ProductsModel
 
     function addProduct($nombre,$precio,$descripcion,$imagen,$categoria)
     {
+        $pathImg = $this->uploadImage($imagen);
+
 
         $query = $this->db->prepare("INSERT INTO `productos` (`nombre`, `precio`, `descripcion`, `imagen`, `idTipoDeProducto`, `idProducto`) VALUES (?, ?, ?, ?, ?, ?);");
-        $query->execute([$nombre,$precio,$descripcion,1,$categoria, NULL]);
+        $query->execute([$nombre,$precio,$descripcion,$pathImg,$categoria, NULL]);
 
     }
 
     function editProduct($nombre,$precio,$descripcion,$imagen,$categoria,$id)
     {
+        $pathImg = $this->uploadImage($imagen);
+
 
         $query = $this->db->prepare("UPDATE `productos` SET `nombre` = ?, `precio` = ?, `descripcion` = ?, `imagen` = ?, `idTipoDeProducto` = ? WHERE `productos`.`idProducto` = ?");
-        $query->execute([$nombre,$precio,$descripcion,1,$categoria, $id]);
+        $query->execute([$nombre,$precio,$descripcion,$pathImg,$categoria, $id]);
 
     }
 
@@ -79,4 +83,13 @@ class ProductsModel
 
         return $categories;
     }
+
+
+
+    private function uploadImage($image){
+        $target = 'img/task/' . uniqid() . '.jpg';
+        move_uploaded_file($image, $target);
+        return $target;
+    }
+
 }

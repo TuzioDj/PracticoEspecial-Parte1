@@ -53,21 +53,32 @@ class ProductsController
 
         $categories = $this->model->getAllCategories(); // NO VA, HAY QUE PREGUNTAR
         $this->view->showAddForm($categories);
-
-
-
     }
 
     public function addProduct()
     {
         $this->helper->checkLoggedIn();
+        $categories = $this->model->getAllCategories(); // NO VA, HAY QUE PREGUNTAR
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
-        $imagen = $_POST['imagen'];
         $categoria = $_POST['categoria'];
+        
+        if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg"
+            || $_FILES['imagen']['type'] == "image/png")
+        {
+            $this->model->addProduct($nombre, $precio, $descripcion, $_FILES['imagen']['tmp_name'], $categoria);
+        }
+        else if (empty($_FILES['imagen']['type'])){
+            $error = "La imagen es obligatoria";
+            $this->view->showAddForm($categories, $error);
+        }
+        else{
+            $error = "El formato no es compatible. Subir JPG, JPEG o PNG";
+            $this->view->showAddForm($categories, $error);
+        }
 
-        $this->model->addProduct($nombre,$precio,$descripcion,$imagen,$categoria);
+
         header("Location: " . BASE_URL . 'admin');
     }
 
@@ -79,21 +90,35 @@ class ProductsController
 
         $this->helper->checkLoggedIn();
         $product = $this->model->getProduct($id);
-        $this->view->showEditProduct($product,$categories);
+        $this->view->showEditProduct($product, $categories);
     }
 
 
     public function editProduct($id)
     {
         $this->helper->checkLoggedIn();
+        $product = $this->model->getProduct($id);
+        $categories = $this->model->getAllCategories(); // NO VA, HAY QUE PREGUNTAR
         $nombre = $_POST['nombre'];
         $precio = $_POST['precio'];
         $descripcion = $_POST['descripcion'];
-        $imagen = $_POST['imagen'];
         $categoria = $_POST['categoria'];
+        
+        if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg"
+            || $_FILES['imagen']['type'] == "image/png")
+        {
+            $this->model->editProduct($nombre, $precio, $descripcion, $_FILES['imagen']['tmp_name'], $categoria, $id);
+            header("Location: " . BASE_URL . 'item' . '/' . $id);
+        }
+        else if (empty($_FILES['imagen']['type'])){
+            $error = "La imagen es obligatoria";
+            $this->view->showEditProduct($product, $categories, $error);
+        }
+        else{
+            $error = "El formato no es compatible. Subir JPG, JPEG o PNG";
+            $this->view->showEditProduct($product, $categories, $error);
+        }
 
-        $this->model->editProduct($nombre,$precio,$descripcion,$imagen,$categoria,$id);
-        header("Location: " . BASE_URL . 'item' . '/' . $id);       
     }
 
     public function deleteProduct($id)
@@ -102,5 +127,4 @@ class ProductsController
         $this->model->deleteProduct($id);
         header("Location: " . BASE_URL);
     }
-
 }

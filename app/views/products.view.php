@@ -26,16 +26,17 @@ class ProductsView
         $this->smarty->display('product.tpl');
     }
     
-    function showAddForm($categories)
+    function showAddForm($categories, $error = null)
     {
         $this->smarty->assign('categories', $categories);  // NO VA, HAY QUE PREGUNTAR
 
 
-
+        $this->smarty->assign('error', $error);
         $this->smarty->display('adminForms.tpl');
     }
-     function showEditProduct($product,$categories)
+     function showEditProduct($product,$categories, $error = null)
     {
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('product', $product);
         $this->smarty->assign('categories', $categories);  // NO VA, HAY QUE PREGUNTAR
 

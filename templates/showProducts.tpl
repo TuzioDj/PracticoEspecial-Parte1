@@ -7,7 +7,7 @@
 
             <div class="col-md-3 mt-5">
                 <div class="card bg-light shadow">
-                    <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png" alt="Title">
+                    <img class="card-img-top" src="{$product->imagen}" alt="Title">
                     <div class="card-body">
                         <h5 class="card-title">{$product->nombre}</h5>
                         <p class="card-text">${$product->precio}</p>
