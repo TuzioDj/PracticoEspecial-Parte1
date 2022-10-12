@@ -15,7 +15,6 @@ class CategoriesController
     {
         $this->model = new CategoriesModel();
         $this->view = new CategoriesView();
-        session_start();
 
         $this->helper = new AuthHelper;
 

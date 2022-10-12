@@ -13,6 +13,7 @@ class AuthController
     {
         $this->model = new UserModel();
         $this->view = new AuthView();
+        // session_start();
     }
 
     public function showLogin()

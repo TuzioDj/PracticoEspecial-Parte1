@@ -1,4 +1,4 @@
-    <h3>Producto:</h3>
+    <h3>Nuevo producto:</h3>
     <form method="POST" action="addProduct">
 
         <div class="mb-3">
@@ -34,7 +34,7 @@
     </form>
 
     <br><br>
-    <h3>Categoria:</h3>
+    <h3>Nueva categoria:</h3>
     <form method="POST" action="addCategory">
 
         <div class="mb-3">
