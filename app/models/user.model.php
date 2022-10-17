@@ -9,7 +9,7 @@ class UserModel
     {
         $this->db = new PDO('mysql:host=localhost;' . 'dbname=practicoespecial;charset=utf8', 'root', '');
     }
-
+    // TRAIGO UN USUARIO CON UN EMAIL
     function getUserByEmail($email)
     {
         $query = $this->db->prepare("SELECT * FROM users WHERE email = ?");

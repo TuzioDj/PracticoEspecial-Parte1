@@ -13,22 +13,24 @@ if (!empty($_GET['action'])) {
 // parsea la accion Ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
-// instancio el unico controller que existe por ahora
-    $categoriesController = new CategoriesController();
-    $authController = new AuthController();
-    $productsController = new ProductsController();
-// tabla de ruteo
-switch ($params[0]) {
-    case 'inicio':
-        $categoriesController->showNavbar();
+// CONSTRUYO EL AUTH PARA INICIAR LA SESION
+$authController = new AuthController();
+// INSTANCIO LOS CONTROLADORES
+$categoriesController = new CategoriesController();
+$productsController = new ProductsController();
+// MUESTRO LA BARRA DE NAVEGACION POR DEFECTO
+$categoriesController->showNavbar();
 
+
+
+// TABLA DE RUTEO
+switch ($params[0]) {
+    // MUESTREO DE PRODUCTOS
+    case 'inicio':
         $productsController->showAllProducts();
         break;
 
     case 'item':
-        $categoriesController->showNavbar();
-
-
         if (!empty($params[1])) {
             $productsController->showProduct($params[1]);
         } else {
@@ -37,9 +39,6 @@ switch ($params[0]) {
         break;
 
     case 'sortby':
-        $categoriesController->showNavbar();
-
-
         if (!empty($params[1])) {
             $productsController->sortBy($params[1]);
         } else {
@@ -48,23 +47,12 @@ switch ($params[0]) {
         break;
 
 
-
-
+    // MUESTREO DE ADMIN Y FUNCIONES RELACIONADAS
     case 'admin':
-        $categoriesController->showNavbar();
-
-        $productsController->showAddForm();
-        break;
-
-    case 'addProduct':
-        $categoriesController->showNavbar();
-
-        $productsController->addProduct();
+        $productsController->showAdminForm();
         break;
 
     case 'editProductForm':
-        $categoriesController->showNavbar();
-
         if (!empty($params[1])) {
             $productsController->showEditProduct($params[1]);
         } else {
@@ -72,14 +60,15 @@ switch ($params[0]) {
         }
         break;
 
-    case 'editProduct':
-        $categoriesController->showNavbar();
+    case 'addProduct':
+        $productsController->addProduct();
+        break;
 
+    case 'editProduct':
         $productsController->editProduct($params[1]);
         break;
 
     case 'deleteProduct':
-
         $productsController->deleteProduct($params[1]);
         break;
 
@@ -91,27 +80,25 @@ switch ($params[0]) {
         $categoriesController->editCategory();
         break;
 
+    case 'deleteCategory':
+        $categoriesController->deleteCategory();
+        break;
 
 
+    // LOGIN
     case 'login':
-        $categoriesController->showNavbar();
-
-
         $authController->showLogin();
         break;
+
     case 'logout':
-
-
         $authController->logout();
         break;
 
     case 'validate':
-        $categoriesController->showNavbar();
-
         $authController->validateUser();
         break;
 
-        
+
     default:
         echo ('404 Page not found');
         break;

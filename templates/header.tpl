@@ -7,18 +7,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{BASE_URL}css/style.css">
   <!-- Importo Bootstrap (CSS) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
 
   <title>HardStore</title>
 </head>
 
 <!--  Arranca body  -->
 
-<body>
-  <header>
+<body class="mb-5">
+  <header class="mb-5">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
       <div class="container">
@@ -43,7 +43,7 @@
                 Categorias
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="sortby">Todo</a></li>
+                <li><a class="dropdown-item" href="inicio">Todo</a></li>
                 {foreach from=$categories item=$category}
 
                   <li><a class="dropdown-item" href="sortby/{$category->idTipo}">{$category->tipoDeProducto}</a></li>
@@ -66,7 +66,6 @@
         </div>
       </div>
     </nav>
-    </br></br>
   </header>
 
   <!-- Comienza el main -->

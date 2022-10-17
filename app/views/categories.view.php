@@ -9,7 +9,7 @@ class CategoriesView
     {
         $this->smarty = new Smarty();
     }
-
+    // MUESTRO NAVBAR
     function showNavbar($categories)
     {
         $this->smarty->assign('count', count($categories));

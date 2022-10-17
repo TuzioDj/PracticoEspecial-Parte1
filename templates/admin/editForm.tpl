@@ -13,29 +13,31 @@
 
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Descripcion</label>
-        <input name="descripcion" type="text" class="form-control" value="{$product->descripcion}">
+        <textarea class="form-control" aria-label="With textarea" name="descripcion">{$product->descripcion}</textarea>
     </div>
 
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Imagen</label>
         <input name="imagen" type="file" class="form-control" value="{$product->imagen}">
     </div>
-    
-    {if $error} 
-        <div class="alert alert-danger mb-3">
-            {$error}
-        </div>
-    {/if}
-
 
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Categoria</label>
         <select name="categoria" class="form-select">
             {foreach from=$categories item=$category}
-                <option value="{$category->idTipo}">{$category->tipoDeProducto}</option>
+                <option value="{$category->idTipo}" {if $product->idTipoDeProducto == $category->idTipo}selected{/if}>
+                    {$category->tipoDeProducto}
+                </option>
             {/foreach}
         </select>
     </div>
+
+    {if $productError}
+        <div class="alert alert-danger mb-3">
+            {$productError}
+        </div>
+    {/if}
+
 
     <button type="submit" class="btn btn-primary">Editar</button>
 </form>

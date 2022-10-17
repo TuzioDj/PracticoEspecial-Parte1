@@ -1,3 +1,11 @@
-.prueba{
-    max-width: 100% !important;
+body{
+    background-color: rgb(230, 230, 230);
+}
+img{
+    width: 100%;
+}
+.columns-2{
+    column-count: 2;
+    font-family: unset;
+    white-space: break-spaces;
 }

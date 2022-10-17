@@ -9,7 +9,7 @@ class AuthView
     {
         $this->smarty = new Smarty();
     }
-
+    // MUESTRO LOGIN
     function showLogin($error = null)
     {
         $this->smarty->assign("error", $error);
